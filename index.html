@@ -4,17 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulario de contacto construido con HTML y CSS desde cero, ideal para estudiantes Frontend">
+    <!-- Metadatos para SEO -->
+    <meta name="description"
+        content="Formulario de contacto construido con HTML y CSS desde cero, ideal para estudiantes Frontend">
     <meta name="keywords" content="frontend, formulario, HTML, CSS, Frontend Club">
     <meta name="author" content="Frontend Club">
+    <!-- Favicon (icono del sitio) -->
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <!-- Estilos -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title> Formulario de contacto | Frontend Club</title>
+    <!-- Titulo -->
+    <title> Contact Form | Frontend Club</title>
 </head>
 
 <body>
 
+    <main class="contact">
+
+        <!-- Popup de éxito -->
+        <div class="contact__popup contact__popup--hidden">
+            <p class="contact__popup-title">Message Sent</p>
+            <p class="contact__popup-text">
+                Thanks for completing the form. We'll be in touch soon!
+            </p>
+        </div>
+
+        <!-- Formulario -->
+        <section class="contact__card">
+            <form action="#" class="contact__form" novalidate>
+                <h2 class="contact__title">Contact Us</h2>
+
+                <!-- Campos: nombre y apellidos -->
+                <div class="contact__row">
+                    <div class="contact__field">
+                        <label for="fname" class="contact__label">
+                            First Name <span class="contact__required">*</span>
+
+                        </label>
+                        <input type="text" name="fname" id="fname" class="contact__input" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="lname" class="contact__label">
+                            Last Name <span class="contact__required">*</span>
+                        </label>
+                        <input type="text" name="lname" id="lname" class="contact__input" required>
+                    </div>
+                </div>
+
+                <!-- Campo: correo electrónico -->
+                <div class="contact__field contact__field--full">
+                    <label for="email" class="contact__label">
+                        Email Address <span class="contact__required">*</span>
+                    </label>
+                    <input type="email" name="email" id="email" class="contact__input" required>
+                </div>
+
+                <!-- Grupo: Query Type-->
+                <div class="contact__field contact__field--full">
+                    <label class="contact__label">
+                        Query Type <span class="contact__required">*</span>
+                    </label>
+                    <!-- Campos de radio: general y support -->
+                    <div class="contact__radio-group">
+                        <label class="contact__radio-option">
+                            <input type="radio" name="query" value="general" class="contact__radio-input" required />
+                            <span class="contact__radio-label">General Enquiry</span>
+                        </label>
+
+                        <label class="contact__radio-option">
+                            <input type="radio" name="query" value="support" class="contact__radio-input" required />
+                            <span class="contact__radio-label">Support Request</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Campo: mensaje -->
+                <div class="contact__field contact__field--full">
+                    <label for="message" class="contact__label">
+                        Message <span class="contact__required">*</span>
+                    </label>
+                    <textarea id="message" name="message" class="contact__textarea" rows="4" required></textarea>
+                </div>
+
+                <!-- Checkbox de consentimiento -->
+                <div class="contact__checkbox">
+                    <input type="checkbox" id="consent" name="consent" class="contact__checkbox-input" required />
+                    <label for="consent" class="contact__checkbox-label">
+                        I consent to being contacted by the team <span class="contact__required">*</span>
+                    </label>
+                </div>
+
+                <!-- Boton de envio -->
+                <button type="submit" class="contact__button">Submit</button>
+
+            </form>
+        </section>
+
+    </main>
 
     <script src="assets/js/main.js" defer></script>
 </body>
