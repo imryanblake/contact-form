@@ -1,0 +1,34 @@
+/* ============================
+   Reset básico – Frontend Club
+   ============================ */
+
+/* Quita márgenes y paddings por defecto en todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura una fuente más consistente en todos los navegadores */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+/* Quita los estilos predeterminados a listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Quita subrayado azul feo de los enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Las imágenes nunca se salen del contenedor */
+img {
+  max-width: 100%;
+  display: block;
+}
