@@ -1,0 +1,6 @@
+# Archivos temporales de VS Code
+.vscode/
+
+# Archivos temporales
+*.tmp
+*.temp
