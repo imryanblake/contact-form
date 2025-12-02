@@ -1,0 +1,330 @@
+/* ========================================
+   Proyecto: Contact Form | Frontend Club
+   Descripción: Hoja de estilos principal
+   Autor: Frontend Club
+   ======================================== */
+
+/*****************************************
+   TABLA DE CONTENIDOS
+   1. Fuentes
+   2. Variables Globales
+   3. Estilos Base
+   4. Estructura (Layout)
+   5. Componentes del Formulario
+        5.1 Título
+        5.2 Campos y Etiquetas
+        5.3 Inputs y Textarea
+        5.4 Grupo de Radios
+        5.5 Checkbox
+        5.6 Botón
+   6. Popup de Confirmación
+   7. Validaciones y Errores
+   8. Animaciones
+   9. Responsive
+******************************************/
+
+/* ===== 1. Fuentes ===== */
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+
+/* ===== 2. Variables Globales ===== */
+:root {
+    --green-lighter: hsl(148, 38%, 91%);
+    --green-medium: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --grey-medium: hsl(186, 15%, 59%);
+    --grey-darker: hsl(187, 24%, 22%);
+    --font: "Karla", sans-serif;
+}
+
+
+/* ===== 3. Estilos Base ===== */
+body {
+    font-family: var(--font);
+    background-color: var(--green-lighter);
+    color: var(--grey-darker);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+form,
+input,
+textarea,
+button,
+label {
+    font-family: var(--font);
+}
+
+
+/* ===== 4. Estructura (Layout) ===== */
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact__card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2.5rem;
+    max-width: 580px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ===== 5. Componentes del Formulario ===== */
+/* ===== 5.1 Título ===== */
+.contact__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--grey-darker);
+    margin-bottom: 2rem;
+}
+
+/* ===== 5.2 Campos y Etiquetas ===== */
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact__field--full {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.contact__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact__label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--grey-darker);
+    margin-bottom: 0.4rem;
+}
+
+.contact__required {
+    color: var(--green-medium);
+}
+
+/* ===== 5.3 Inputs y Textarea ===== */
+.contact__input,
+.contact__textarea {
+    color: var(--grey-darker);
+    border: 1px solid var(--grey-medium);
+    border-radius: 6px;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    border-color: var(--green-medium);
+    box-shadow: 0 0 4px rgba(0, 125, 108, 0.25);
+    outline: none;
+}
+
+.contact__textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* ===== 5.4 Grupo de Radios ===== */
+.contact__radio-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact__radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex: 1;
+    border: 1px solid var(--grey-medium);
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    background-color: var(--white);
+    transition: all 0.25s ease;
+}
+
+.contact__radio-option:hover {
+    border-color: var(--green-medium);
+    background-color: var(--green-lighter);
+}
+
+.contact__radio-input {
+    accent-color: var(--green-medium);
+    cursor: pointer;
+}
+
+.contact__radio-label {
+    font-size: 0.9rem;
+    color: var(--grey-darker);
+}
+
+/* ===== 5.5 Checkbox ===== */
+.contact__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 1rem 0;
+}
+
+.contact__checkbox-input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--green-medium);
+    cursor: pointer;
+}
+
+.contact__checkbox-label {
+    font-size: 0.85rem;
+    color: var(--grey-darker);
+    line-height: 1.4;
+}
+
+/* ===== 5.6 Botón ===== */
+.contact__button {
+    width: 100%;
+    background-color: var(--green-medium);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.1s;
+}
+
+.contact__button:hover {
+    background-color: var(--grey-darker);
+}
+
+.contact__button:active {
+    transform: scale(0.98);
+}
+
+
+/* ===== 6. Popup de Confirmación ===== */
+.contact__popup {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px);
+  background-color: var(--grey-darker);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.contact__popup--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.contact__popup-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.contact__popup-text {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  opacity: 0.9;
+}
+
+
+/* ===== 7. Validaciones y Errores ===== */
+.contact__error {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.contact__input--error {
+  border-color: var(--red);
+  box-shadow: 0 0 4px rgba(217, 48, 37, 0.25);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+
+/* ===== 8. Animaciones ===== */
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+/* ===== 9. Responsive ===== */
+/* Tablets */
+@media (max-width: 768px) {
+  .contact__card {
+    max-width: 90%;
+    padding: 2rem;
+  }
+
+  .contact__row {
+    flex-direction: column;
+  }
+
+  .contact__title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  body {
+    padding: 0.8rem;
+  }
+
+  .contact__card {
+    padding: 1.8rem;
+  }
+
+  .contact__title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__radio-group {
+    flex-direction: column;
+  }
+
+  .contact__button {
+    font-size: 0.9rem;
+  }
+}
